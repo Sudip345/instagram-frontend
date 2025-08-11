@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="signup.css">
+<body>
+    <div class="signUp-container">
+        <div class="form-wrapper">
+            <h2>Welcome </h2>
+            <form id="SignUp-form">
+                <div id="initial-fields">
+                    <div class="email-wrapper">
+                        <input type="email" class="input email" placeholder="Email">
+                    </div>
+                    <div class="username-wrapper">
+                        <input type="text" class="input username" placeholder="Username">
+                    </div>
+                </div>
+                <div id="secondary-fields" style="display: none;">
+                    <input type="text" class="input otp" placeholder="OTP">
+                    <input type="text" class="input realName" placeholder="Real Name">
+                    <div class="password-container">
+                        <input type="password" class="input password" placeholder="Password">
+                        <span class="toggle-password">👀</span>
+                    </div>
+                </div>
+                <a href="login.html" class="sign-in">Already have an account ? Sign-in</a>
+                <button class="submit">Request OTP</button>
+            </form>
+              <p class="error-message"></p>
+        </div>
+      
+        
+    </div>
+    <script src="signup.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

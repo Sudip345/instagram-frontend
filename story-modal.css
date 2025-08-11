@@ -1,0 +1,339 @@
+/* The Modal (background) */
+    #storyModal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1001; /* Ensure it appears above post-story-modal */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        
+        
+    }
+
+/* Story Viewers Modal */
+#storyViewersModal {
+    position: fixed; 
+    z-index: 1001; /* Ensure it appears above other modals */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+#storyViewersModal.active {
+    display: flex; /* Use flex for centering content when active */
+    justify-content: center;
+    align-items: center;
+}
+
+    #storyModal .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding-top: 8px;
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-bottom: 20px;
+        height: auto;
+        width: auto; /* Adjusted for smaller screens */
+        max-width: 450px; /* Reduced max-width */
+        max-height: 600px;
+        border-radius: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        background-color:transparent;
+        color: white;
+        border: 1px solid #888;
+    }
+
+/* The Close Button */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ddd;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.story-display {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Increased height for better viewing */
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.story-display img,
+.story-display video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.carousel-item.active {
+    display: flex; /* Show active item */
+}
+
+.carousel-item img,
+.carousel-item video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.story-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    margin-left: 7px;
+    margin-top: 7px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.story-profile-pic {
+    width: 40px; /* Slightly larger avatar */
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.story-username {
+    color: rgb(14, 9, 9);
+    font-weight: bold;
+    font-size: 12px; /* Slightly larger font */
+    margin: 0;
+    cursor: pointer; /* Indicate clickable */
+    z-index: inherit;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.story-time {
+    font-size: 12px;
+    color:  rgb(14, 9, 9);
+    font-weight: normal;
+    margin-left: 13px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px; /* Larger arrows */
+    border-radius: 50%; /* Circular buttons */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.story-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    border-top: 1px solid #333; /* Darker border */
+}
+
+.story-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center; /* Center actions */
+}
+
+.like-story-btn, .delete-story-btn, .view-story-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-story-btn {
+    cursor: pointer;
+}
+
+.like-story-btn svg, .delete-story-btn svg, .view-story-btn svg {
+    transition: transform 0.2s ease-in-out;
+}
+
+.like-story-btn:hover svg, .delete-story-btn:hover svg, .view-story-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.like-story-btn[data-liked="true"] svg {
+    fill: #ff3040;
+    stroke: #ff3040;
+}
+
+
+
+.add-story-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #007bff; /* Blue background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 2px solid white; /* White border */
+}
+
+.add-story-icon:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Story Viewers Modal */
+#storyViewersModal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1001; /* Ensure it appears above other modals */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color:transparent; /* Black w/ opacity */
+}
+
+#storyViewersModal.active {
+    display: flex; /* Use flex for centering content when active */
+    justify-content: center;
+    align-items: center;
+}
+
+#storyViewersModal .modal-content {
+    background-color:transparent;
+    color: white;
+    border: white 1px solid;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+#storyViewersModal .modal-header {
+    background-color:skyblue;
+    color: white;
+    border: white 1px solid;
+    padding: 5px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+}
+.story-viewers-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.story-viewer-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.story-viewer-item:last-child {
+    border-bottom: none;
+}
+
+.story-viewer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.story-viewer-username {
+    font-weight: bold;
+}
+
+.story-like-icon {
+    margin-left: auto;
+    color: #ff3040; /* Red color for the heart */
+}
+
+#storyViewersModal .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}

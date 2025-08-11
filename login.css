@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: rgb(86, 132, 136);
+  height: 100vh;
+  background-image: url("2nd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.form-wrapper {
+
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+.form-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background: #f0f0f0;
+  outline: none;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+
+.password-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #333;
+  height: 20px;
+  line-height: 20px;
+ 
+
+}
+
+
+
+
+
+.input-field:focus {
+  background: #cac5c5;
+}
+
+.or {
+  text-align: center;
+  margin: 10px 0;
+  color: #190303;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #5a67d8;
+}
+
+.submit-btn:disabled {
+    background-color: #b2dffc;
+    cursor: not-allowed;
+}
+
+.SignUp{
+  margin-left: 13%;
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
+  text-align: center;
+  display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-message[style*="red"] {
+    background-color: #ffebee;
+    border: 1px solid #ffcdd2;
+}
+
+.error-message[style*="green"] {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+}
+
+
+@media (max-width: 500px) {
+  .form-wrapper {
+    padding: 25px 20px;
+  }
+}

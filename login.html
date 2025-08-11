@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="form-wrapper">
+      <h2>Welcome Back!</h2>
+      <form id="loginForm">
+        <input type="text" class="input-field username" placeholder="Username" />
+        <p class="or">Or</p>
+        <input type="email" class="input-field email" placeholder="Email" />
+        <div class="password-container">
+          <input type="password" class="input-field password" placeholder="Password" />
+          <span class="toggle-password">👀</span>
+        </div>
+
+        <a href="signup.html" class="SignUp">Don't have an account ? Sign Up</a>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+      <p class="error-message" id="errorMessage"></p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="login.js"></script>
+</body>
+
+</html>
